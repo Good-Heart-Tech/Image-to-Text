@@ -7,6 +7,7 @@
 
 :root {
     --primary: #7189ff;
+    --primary-hover: #586CD0;
     --dark-blue: #394053;
     --gray: #808080;
     --light-blue: #a0ddff;
@@ -125,7 +126,7 @@ h1 {
 }
 
 .upload-button:hover {
-    background-color: #5a6fd1;
+    background-color: var(--primary-hover);
 }
 
 .file-types {
@@ -238,7 +239,7 @@ h1 {
 }
 
 .copy-button:hover, .download-button:hover {
-    background-color: #5a6fd1;
+    background-color: var(--primary-hover);
 }
 
 .copy-button.success {
@@ -294,7 +295,7 @@ footer {
 }
 
 .donate-button:hover {
-    background-color: #5a6fd1;
+    background-color: var(--primary-hover);
 }
 
 .github-link {
