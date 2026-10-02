@@ -8,7 +8,7 @@ const downloadButton = document.getElementById('downloadButton');
 const processingIndicator = document.getElementById('processingIndicator');
 
 // Update copyright year
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('ght-year').textContent = new Date().getFullYear();
 
 // Handle clipboard paste events
 document.addEventListener('paste', (e) => {
@@ -26,16 +26,16 @@ document.addEventListener('paste', (e) => {
 // Drag and drop event handlers
 dropZone.addEventListener('dragover', (e) => {
     e.preventDefault();
-    dropZone.style.backgroundColor = 'rgba(113, 137, 255, 0.2)';
+    dropZone.style.backgroundColor = 'var(--ght-palette-hudu-light)';
 });
 
 dropZone.addEventListener('dragleave', () => {
-    dropZone.style.backgroundColor = 'rgba(113, 137, 255, 0.1)';
+    dropZone.style.backgroundColor = '';
 });
 
 dropZone.addEventListener('drop', (e) => {
     e.preventDefault();
-    dropZone.style.backgroundColor = 'rgba(113, 137, 255, 0.1)';
+    dropZone.style.backgroundColor = '';
     const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith('image/')) {
         processImage(file);
