@@ -6,19 +6,13 @@
 }
 
 :root {
-    --primary: #7189ff;
-    --dark-blue: #394053;
-    --gray: #808080;
-    --light-blue: #a0ddff;
-    --rich-black: #091D20;
-    --white: #FFFFFF;
-    --success: #4CAF50;
+    --success-bg: #17653A;
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
-    background-color: var(--rich-black);
-    color: var(--white);
+    font-family: var(--ght-font-family-body);
+    background-color: var(--ght-palette-white);
+    color: var(--ght-palette-charcoal);
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
@@ -39,23 +33,25 @@ header {
 }
 
 h1 {
-    color: var(--white);
+    font-family: var(--ght-font-family-heading);
+    color: var(--ght-palette-rich-black);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
-    color: var(--white);
+    color: var(--ght-palette-charcoal);
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
 .highlight-text {
-    color: var(--light-blue);
+    color: var(--ght-palette-hudu-primary);
+    text-decoration: underline;
 }
 
 .security-message {
-    color: var(--gray);
+    color: var(--ght-palette-charcoal);
     font-size: 0.9rem;
     display: flex;
     align-items: center;
@@ -65,7 +61,7 @@ h1 {
 }
 
 .security-message i {
-    color: var(--primary);
+    color: var(--ght-palette-hudu-primary);
 }
 
 /* Upload section styles */
@@ -75,18 +71,18 @@ h1 {
 }
 
 .upload-area {
-    border: 2px dashed var(--primary);
+    border: 2px dashed var(--ght-palette-hudu-primary);
     border-radius: 10px;
     padding: 2rem;
     text-align: center;
-    background-color: rgba(113, 137, 255, 0.1);
+    background-color: color-mix(in srgb, var(--ght-palette-hudu-light) 30%, white);
     transition: all 0.3s ease;
     max-width: 600px;
     margin: 0 auto;
 }
 
 .upload-area:hover {
-    background-color: rgba(113, 137, 255, 0.2);
+    background-color: var(--ght-palette-hudu-light);
 }
 
 .upload-area .upload-actions {
@@ -99,20 +95,21 @@ h1 {
 
 .upload-area .upload-actions i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--ght-palette-hudu-primary);
 }
 
 .upload-area .upload-actions p {
     font-size: 1.1rem;
-    color: var(--white);
+    color: var(--ght-palette-charcoal);
 }
 
 .upload-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--ght-palette-hudu-primary);
+    color: var(--ght-palette-white);
+    font-weight: var(--ght-font-weight-semibold);
     padding: 0.6rem 1.2rem;
     border-radius: 5px;
     cursor: pointer;
@@ -125,17 +122,17 @@ h1 {
 }
 
 .upload-button:hover {
-    background-color: #5a6fd1;
+    background-color: var(--ght-palette-rich-black);
 }
 
 .file-types {
-    color: var(--gray);
+    color: var(--ght-palette-charcoal);
     font-size: 0.9rem;
     margin-top: 1rem;
 }
 
 .paste-hint {
-    color: var(--light-blue);
+    color: var(--ght-palette-charcoal);
     font-size: 0.9rem;
     margin-top: 0.5rem;
     font-style: italic;
@@ -143,7 +140,8 @@ h1 {
 
 /* Result section styles */
 .result-section {
-    background-color: var(--dark-blue);
+    background-color: color-mix(in srgb, var(--ght-palette-hudu-light) 30%, white);
+    border: 1px solid var(--ght-palette-hudu-light);
     border-radius: 10px;
     padding: 2rem;
 }
@@ -161,7 +159,7 @@ h1 {
 }
 
 .text-header h2 {
-    color: var(--light-blue);
+    color: var(--ght-palette-rich-black);
 }
 
 /* Processing indicator styles */
@@ -171,7 +169,7 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(9, 29, 32, 0.9);
+    background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -188,14 +186,14 @@ h1 {
     width: 40px;
     height: 40px;
     margin: 0 auto 1.5rem;
-    border: 3px solid rgba(113, 137, 255, 0.1);
-    border-top-color: var(--primary);
+    border: 3px solid var(--ght-palette-hudu-light);
+    border-top-color: var(--ght-palette-hudu-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
 .processing-content p {
-    color: var(--white);
+    color: var(--ght-palette-charcoal);
     font-size: 1rem;
 }
 
@@ -205,20 +203,26 @@ h1 {
     }
 }
 
+#userData:focus-visible, .upload-button:focus-within, .copy-button:focus-visible, .download-button:focus-visible {
+    outline: 3px solid var(--ght-palette-primary);
+    outline-offset: 2px;
+}
+
 #userData {
     width: 100%;
     min-height: 200px;
     padding: 1rem;
-    background-color: var(--rich-black);
-    border: 1px solid var(--gray);
+    background-color: var(--ght-palette-white);
+    border: 1px solid var(--ght-palette-hudu-primary);
     border-radius: 5px;
-    color: var(--white);
+    color: var(--ght-palette-charcoal);
     font-family: inherit;
     resize: vertical;
 }
 
 .button-group {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
 }
@@ -227,8 +231,9 @@ h1 {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--ght-palette-hudu-primary);
+    color: var(--ght-palette-white);
+    font-weight: var(--ght-font-weight-semibold);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
@@ -238,101 +243,45 @@ h1 {
 }
 
 .copy-button:hover, .download-button:hover {
-    background-color: #5a6fd1;
+    background-color: var(--ght-palette-rich-black);
 }
 
 .copy-button.success {
-    background-color: var(--success);
+    background-color: var(--success-bg);
 }
 
-/* Footer styles */
-footer {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+/* Good Heart Tech standard app footer, light mode. Uses the kit variables from ght-variables.css.
+   Donate button is white on huduPrimary (4.7:1), which passes AA for its small label. */
+.ght-footer { width: 100%; margin-top: auto; padding: 22px 24px 26px; text-align: center; background: color-mix(in srgb, var(--ght-palette-hudu-light) 30%, white); border-top: 1px solid var(--ght-palette-hudu-light); color: var(--ght-palette-charcoal); }
+.ght-footer-note { max-width: 52rem; margin: 0 auto 16px; font-size: .8125rem; font-style: italic; }
+.ght-footer-row { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.ght-footer-logo img { display: block; height: 30px; width: auto; }
+.ght-footer-copy { font-size: .9375rem; }
+.ght-footer-donate { display: inline-flex; line-height: 1.2; align-items: center; gap: 8px; padding: 9px 22px; border-radius: 8px; background: var(--ght-palette-hudu-primary); color: var(--ght-palette-white); font-weight: var(--ght-font-weight-semibold); text-decoration: none; }
+.ght-footer-donate:hover { background: var(--ght-palette-rich-black); color: var(--ght-palette-white); }
+.ght-footer-github { display: inline-flex; color: var(--ght-palette-rich-black); }
+.ght-footer-github:hover { color: var(--ght-palette-hudu-primary); }
+.ght-footer a:focus-visible { outline: 3px solid var(--ght-palette-primary); outline-offset: 3px; }
 
-.disclaimer {
-    color: var(--gray);
-    font-size: 0.9rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.footer-logo img {
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.footer-logo:hover img {
-    transform: scale(1.1);
-}
-
-.copyright {
-    color: var(--white);
-    font-size: 0.9rem;
-}
-
-.donate-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.donate-button:hover {
-    background-color: #5a6fd1;
-}
-
-.github-link {
-    color: var(--white);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.github-link:hover {
-    color: var(--primary);
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
-
     h1 {
         font-size: 2rem;
     }
-
     .upload-area {
         padding: 1.5rem;
         max-width: 100%;
     }
-
     .upload-area .upload-actions {
         flex-direction: column;
         gap: 0.5rem;
     }
-
     .upload-area .upload-actions i {
         font-size: 1.8rem;
     }
-
-    .footer-content {
-        flex-wrap: wrap;
+    .ght-footer-row {
         gap: 1rem;
     }
-} 
+}
