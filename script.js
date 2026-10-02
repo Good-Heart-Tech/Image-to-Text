@@ -103,7 +103,7 @@ copyButton.addEventListener('click', async () => {
         
         // Update button state
         const originalContent = copyButton.innerHTML;
-        copyButton.innerHTML = '<i class="fas fa-check"></i> Copy Text';
+        copyButton.innerHTML = '<i class="fas fa-check"></i> Copied';
         copyButton.classList.add('success');
         
         // Reset button state after 2 seconds

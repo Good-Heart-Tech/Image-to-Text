@@ -9,6 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="https://graphics.goodhearttech.org/GHT/favicons/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="ght-variables.css">
+    <link rel="stylesheet" href="ght-buttons.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
                     <div class="upload-actions">
                         <i class="fas fa-cloud-upload-alt"></i>
                         <p>Drag & drop your image here, paste from clipboard, or</p>
-                        <label for="fileInput" class="upload-button">
+                        <label for="fileInput" class="upload-button ght-btn ght-btn--primary">
                             <i class="fas fa-folder-open"></i> Choose File
                         </label>
                     </div>
@@ -52,10 +53,10 @@
                     <textarea id="userData" placeholder="Extracted text will appear here..."></textarea>
                 </div>
                 <div class="button-group">
-                    <button id="copyButton" class="copy-button" type="button">
+                    <button id="copyButton" class="copy-button ght-btn" type="button">
                         <i class="fas fa-copy"></i> Copy Text
                     </button>
-                    <button id="downloadButton" class="download-button" type="button">
+                    <button id="downloadButton" class="download-button ght-btn" type="button">
                         <i class="fas fa-download"></i> Download Text File
                     </button>
                 </div>
