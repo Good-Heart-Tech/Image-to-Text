@@ -26,7 +26,7 @@ document.addEventListener('paste', (e) => {
 // Drag and drop event handlers
 dropZone.addEventListener('dragover', (e) => {
     e.preventDefault();
-    dropZone.style.backgroundColor = 'var(--ght-palette-hudu-light)';
+    dropZone.style.backgroundColor = 'var(--ght-palette-primary-tint)';
 });
 
 dropZone.addEventListener('dragleave', () => {
